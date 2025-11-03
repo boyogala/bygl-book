@@ -1,0 +1,63 @@
+% !TEX program = xelatex
+\documentclass[
+  12pt,
+  twoside,
+  openany,
+  a4paper, % a4paper b5paper
+%%% 以上均为 ctexbook 提供的文类选项
+  primary = blue, % 将主色改为blue,green
+  %secondary = orange % 将辅助色改为紫色
+  colorscheme = rbb, 
+  % 配色方案basic,black,rbb,bootstrap-v3
+]{boyogala}
+
+\title{解忧札记}
+\subtitle{Notes on resolving sorrows of \rm{BOYOGALA}}  % 可选
+\author{博優旮旯}
+\date{2025 年 11 月 2 日}
+\typo{王贼臣}  % 排版人员信息，选填
+ 
+
+% 定制元信息
+\org{\Large\textit{博優旮旯-\rm{BOYOGALA}}\\\textsc{\small \tt 过去，我们一知半解；未来，我们一无所知；现在，我们应该知道.}}
+\footorg{\textsc{博優旮旯-\rm{BOYOGALA}}}
+\cover{\includegraphics[width=.6\textwidth]{figure/boyogala-logo.pdf}}
+% \cover{\includegraphics[width=.8\textwidth]{boyogala-vx.pdf}}
+\license{}  % 清空许可证信息
+
+% 调整封面标题大小
+\renewcommand{\titlefont}{\Huge\bfseries}
+\renewcommand{\subtitlefont}{\LARGE\itshape}
+
+\begin{document}
+
+\maketitle
+
+%%%%%%%%%% 序 和 言
+\input{chapter/preface.tex}
+
+%%%%%%%%% 目 录
+\newpage 
+\tableofcontents
+
+
+% 为了方便修改、校正，以及用户的方便反馈，增加行记录
+\linenumbers
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% 以上是主页，以下是正文
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+%%% 2025年研究生课程《矩阵理论》的作业
+\input{chapter/2025mt-hw.tex}
+
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% 以上是正文，以下是参考文献
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{thebibliography}{99}
+  \bibitem{texbook} KNUTH~D~E. The \TeX book [M]. Addison-Wesley: Reading, 1986.
+  \bibitem{latex} 刘海洋. \LaTeX 入门 [M]. 人民邮电出版社: 北京, 2013.
+\end{thebibliography}
+
+\end{document}
