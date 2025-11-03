@@ -2,7 +2,7 @@
 基于 -- 钱院学辅 LaTeX 书籍 qyxf-book 模板 --的boyogala模板
 
 
-![thumbnail](figure/boyogala-vx.pdf)
+![微信公众号](figure/attention.png)
 
 ---
 
