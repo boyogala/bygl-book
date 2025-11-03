@@ -1,0 +1,242 @@
+\chapter{ $2025$年秋《矩阵理论》}
+
+2025年秋研究生学位课程《矩阵理论》，共有$295$位同学选择此课程，包括计算机学院、海洋学院和机械学院的一部分学生.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{2025年10月23日：作业一}
+% HOMEWORK - 作业一
+\begin{tcolorbox}
+\homework{1} 
+设四阶实矩阵有如下两种展开形式：
+\begin{equation*}
+        \begin{pmatrix} 
+        b_1^\top\\
+        b_2^\top\\
+        b_3^\top\\
+        b_4^\top\\
+        \end{pmatrix} 
+\overset{\text{行展开}}{=:} 
+    A(t) = 
+        \begin{pmatrix} 
+        t & 1 & 1 & -t\\
+        1 & -t & t & 1 \\
+        1 & t & -t & 1\\
+        -t & 1 & 1 & t\\
+        \end{pmatrix} 
+      \overset{\text{列展开}}{:=} 
+        \left( a_1,a_2,a_3,a_4\right),
+\end{equation*}
+其中列向量$b_1,b_2,b_3,b_4,a_1,a_2,a_3,a_4 \in \mathbb{R}^4$和$t \in \mathbb{R}$. 考虑矩阵$A(t)$的“行空间”和“列空间”分别是：
+    \begin{equation*}
+        \rm{Row(A)} = \rm{Span}\left\{b_1,b_2,b_3,b_4 \right\} ~ \text{和} ~
+        \rm{Col(A)} = \rm{Span}\left\{a_1,a_2,a_3,a_4 \right\}.
+    \end{equation*}
+请回答以下问题（\textcolor{red}{ \large \bf 当前页不够，请在背面作答；提交纸质作业前，请拍照留存}）： 
+\begin{itemize}
+\setlength{\itemsep}{0pt}
+\setlength{\parsep}{0pt}
+\setlength{\parskip}{0pt}
+   \item[(Q1)] 请尝试求参数$t$的范围，使得线性子空间$\rm{Row(A)} $ 和 $ \rm{Col(A)}$的维数都是$4$;
+   \item[(Q2)] 请尝试求参数$t$的范围，使得线性子空间的交$U = \rm{Row(A)} \cap \rm{Col(A)}$的维数为$2$，并将此线性子空间$U$的一组基扩充为$\mathbb{R}^{4}$的一组基；
+   \item[(Q3)] 请尝试求参数$t$的范围，使得线性子空间的和$W = \rm{Row(A)} + \rm{Col(A)}$的维数为$2$, 并将此线性子空间$U$的一组基扩充为$W$的一组基.
+ \end{itemize}
+\end{tcolorbox}
+
+\solve 首先，方程左右两侧同除以 $a$，得到
+\[ x^2 + \frac bax + \frac ca = 0 \]
+根据一次项来配方，按公式 $(x+A)^2=x^2+2Ax+A^2$ 配出常数项：
+\[ x^2 + \frac bax + \left(\frac b{2a}\right)^2 + \frac ca - \left(\frac b{2a}\right)^2 = 0 \]
+配方并移项得到
+\[ \left(x + \frac b{2a}\right)^2 = \frac {b^2}{4a^2} - \frac ca \]
+方程左右开方，得
+\[ x + \frac b{2a} = \pm \sqrt{\frac {b^2}{4a^2} - \frac ca} \]
+从而得到方程 \eqref{eq:quadratic} 之解为
+\begin{equation}
+  x = - \frac b{2a} \pm \sqrt{\frac {b^2}{4a^2} - \frac ca}
+\end{equation}
+该式即为一元二次方程的\textbf{通用求根公式}。
+
+
+\analysis 在这一问题中，需要注意以下几点 \cite{texbook,latex}：
+\begin{itemize}
+  \item ……
+  \item ……
+  \item ……
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{2025年10月30日：作业二}
+% HOMEWORK - 作业二
+\begin{tcolorbox}
+\homework{2} 
+如图 \ref{fig2:Rotation} 所示，点$\mathbf{v}$绕原点逆时针旋转 $\theta$, 得到点$\mathbf{v}'$. 假设点$\mathbf{v}$的坐标为$(x,y)^\top \in \mathbb{R}^2$ 和 点$\mathbf{v}'$的坐标为$(x',y')^\top \in \mathbb{R}^2$. 以上过程便构成了从$\mathbb{R}^2$绕原点到$\mathbb{R}^2$的一个{\bf 旋转变换} : $\mathscr{A}$,既，
+\begin{equation}\label{Eq2:hw2}
+    \begin{pmatrix}
+        x'\\
+        y'
+    \end{pmatrix}
+    = \mathscr{A} 
+    \begin{pmatrix}
+        x\\
+        y
+    \end{pmatrix}
+\end{equation}
+
+请回答以下问题（\textcolor{red}{ {\large \bf 当前页不够，请在背面作答；提交纸质作业前，请拍照留存} }）： 
+\begin{itemize}
+\setlength{\itemsep}{0pt}
+\setlength{\parsep}{0pt}
+\setlength{\parskip}{0pt}
+   \item[(Q1)] 请尝试确定 \eqref{Eq2:hw2} 中{\bf 旋转变换}$\mathscr{A}$的表示矩阵$A$;
+   \item[(Q2)] 假设点$\mathbf{v}'$经过$x$和$y$方向分别平移$t_x$和$t_y$到点$\mathbf{v}'' = (x'',y'')^\top \in \mathbb{R}^2$,此过程确定了从$\mathbb{R}^2$到$\mathbb{R}^2$ {\bf 平移变换} : $\mathscr{B}$, 请尝试确定{\bf 平移变换} $\mathscr{B}$的表示矩阵$B$；
+   \item[(Q3)] 在（Q1）和（Q2）的基础上，可以得到从点$v$到点$v''$的一个{\bf 线性变换} $\mathscr{C}$, 即
+   \begin{equation}\label{Eq2:hw3}
+    \begin{pmatrix}
+        x''\\
+        y''
+    \end{pmatrix}
+    = \mathscr{C} 
+    \begin{pmatrix}
+        x\\
+        y
+    \end{pmatrix}.
+\end{equation}
+    请尝试确定 \eqref{Eq2:hw3} 中{\bf 线性变换} $\mathscr{C}$的表示矩阵$C$,并在二维平面上给出相应的示意图.
+ \end{itemize}
+\end{tcolorbox}
+
+\solve 首先，方程左右两侧同除以 $a$，得到
+\[ x^2 + \frac bax + \frac ca = 0 \]
+根据一次项来配方，按公式 $(x+A)^2=x^2+2Ax+A^2$ 配出常数项：
+\[ x^2 + \frac bax + \left(\frac b{2a}\right)^2 + \frac ca - \left(\frac b{2a}\right)^2 = 0 \]
+配方并移项得到
+\[ \left(x + \frac b{2a}\right)^2 = \frac {b^2}{4a^2} - \frac ca \]
+方程左右开方，得
+\[ x + \frac b{2a} = \pm \sqrt{\frac {b^2}{4a^2} - \frac ca} \]
+从而得到方程 \eqref{eq:quadratic} 之解为
+\begin{equation}
+  x = - \frac b{2a} \pm \sqrt{\frac {b^2}{4a^2} - \frac ca}
+\end{equation}
+该式即为一元二次方程的\textbf{通用求根公式}。
+
+
+\analysis 在这一问题中，需要注意以下几点 \cite{texbook,latex}：
+\begin{itemize}
+  \item ……
+  \item ……
+  \item ……
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{2025年10月30日：作业三}
+% HOMEWORK - 作业三
+\begin{tcolorbox}
+\homework{3} 
+如图 \ref{fig2:Rotation} 所示，点$\mathbf{v}$绕原点逆时针旋转 $\theta$, 得到点$\mathbf{v}'$. 假设点$\mathbf{v}$的坐标为$(x,y)^\top \in \mathbb{R}^2$ 和 点$\mathbf{v}'$的坐标为$(x',y')^\top \in \mathbb{R}^2$. 以上过程便构成了从$\mathbb{R}^2$绕原点到$\mathbb{R}^2$的一个{\bf 旋转变换} : $\mathscr{A}$,既，
+\begin{equation}\label{Eq2:hw2}
+    \begin{pmatrix}
+        x'\\
+        y'
+    \end{pmatrix}
+    = \mathscr{A} 
+    \begin{pmatrix}
+        x\\
+        y
+    \end{pmatrix}
+\end{equation}
+
+请回答以下问题（\textcolor{red}{ {\large \bf 当前页不够，请在背面作答；提交纸质作业前，请拍照留存} }）： 
+\begin{itemize}
+\setlength{\itemsep}{0pt}
+\setlength{\parsep}{0pt}
+\setlength{\parskip}{0pt}
+   \item[(Q1)] 请尝试确定 \eqref{Eq2:hw2} 中{\bf 旋转变换}$\mathscr{A}$的表示矩阵$A$;
+   \item[(Q2)] 假设点$\mathbf{v}'$经过$x$和$y$方向分别平移$t_x$和$t_y$到点$\mathbf{v}'' = (x'',y'')^\top \in \mathbb{R}^2$,此过程确定了从$\mathbb{R}^2$到$\mathbb{R}^2$ {\bf 平移变换} : $\mathscr{B}$, 请尝试确定{\bf 平移变换} $\mathscr{B}$的表示矩阵$B$；
+   \item[(Q3)] 在（Q1）和（Q2）的基础上，可以得到从点$v$到点$v''$的一个{\bf 线性变换} $\mathscr{C}$, 即
+   \begin{equation}\label{Eq2:hw3}
+    \begin{pmatrix}
+        x''\\
+        y''
+    \end{pmatrix}
+    = \mathscr{C} 
+    \begin{pmatrix}
+        x\\
+        y
+    \end{pmatrix}.
+\end{equation}
+    请尝试确定 \eqref{Eq2:hw3} 中{\bf 线性变换} $\mathscr{C}$的表示矩阵$C$,并在二维平面上给出相应的示意图.
+ \end{itemize}
+\end{tcolorbox}
+
+\solve 首先，方程左右两侧同除以 $a$，得到
+\[ x^2 + \frac bax + \frac ca = 0 \]
+根据一次项来配方，按公式 $(x+A)^2=x^2+2Ax+A^2$ 配出常数项：
+\[ x^2 + \frac bax + \left(\frac b{2a}\right)^2 + \frac ca - \left(\frac b{2a}\right)^2 = 0 \]
+配方并移项得到
+\[ \left(x + \frac b{2a}\right)^2 = \frac {b^2}{4a^2} - \frac ca \]
+方程左右开方，得
+\[ x + \frac b{2a} = \pm \sqrt{\frac {b^2}{4a^2} - \frac ca} \]
+从而得到方程 \eqref{eq:quadratic} 之解为
+\begin{equation}
+  x = - \frac b{2a} \pm \sqrt{\frac {b^2}{4a^2} - \frac ca}
+\end{equation}
+该式即为一元二次方程的\textbf{通用求根公式}。
+
+
+\analysis 在这一问题中，需要注意以下几点 \cite{texbook,latex}：
+\begin{itemize}
+  \item ……
+  \item ……
+  \item ……
+\end{itemize}
+
+ % 设置在代码块左部显示行号，用方框包围代码块，代码块显示为红色
+% \begin{Verbatim}[numbers=left, frame=single, formatcom=\color{black}]
+% using JuMP 
+
+% using HiGHS
+% wjModel = Model(HiGHS.Optimizer)  
+ 
+% @variable(wjModel,x1 >= 0)
+% @variable(wjModel,x2 >= 0) 
+
+% @constraint(wjModel,3*x1 + 5*x2 <= 15) 
+% @constraint(wjModel,3*x1 +   x2 <= 6)      
+
+% @objective(wjModel,Max,2*x1 + 3*x2)
+
+% print(wjModel)
+
+% ## Solving...
+% optimize!(wjModel)
+
+% @show JuMP.value(x1)
+% @show JuMP.value(x2)
+% @show JuMP.objective_value(wjModel) 
+% \end{Verbatim}
+
+\begin{tcolorbox}
+% breaklines：启用自动换行。很重要，不然代码会跑到页面外面去。
+% breakanywhere：允许在任意位置换行。
+% linenos：显示行号。
+% tabsize=4：Tab 宽度
+%fontsize=\small, linenos, breaklines, bgcolor=lightgray
+\begin{minted}[fontsize=\small, breaklines,breakanywhere,tabsize=4]{julia}
+function fib(n)
+    if n <= 2
+        return 1
+    else
+        return fib(n-1) + fib(n-2)
+    end
+end
+println(fib(10))
+\end{minted}
+% 引用的时候需要
+\captionof{listing}{"Hello, world" example}
+\label{lst:hello_world}
+% \vspace{1.5em}
+\end{tcolorbox}
+
+
